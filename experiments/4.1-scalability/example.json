@@ -1,0 +1,22 @@
+{
+    "hamiltonian": {
+        "fcidump_path": "FCIDUMP",
+        "threshold": 0.0
+    },
+    "solver": {
+        "cdfci": {
+            "coordinate_pick": "gcd_grad",
+            "coordinate_update": "eig",
+            "estimate": 1,
+            "num_of_coordinate": 1,
+            "max_memory": 50,
+            "num_iterations": 1024000,
+            "ref_det_occ": [],
+            "report_interval": 1024,
+            "stopping_criterion_damping_factor": 0.99,
+            "stopping_criterion_threshold": 1e-10,
+            "z_threshold": 5e-07,
+            "z_threshold_search": false
+        }
+    }
+}

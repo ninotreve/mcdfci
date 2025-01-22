@@ -1,0 +1,36 @@
+# Experiment Directory Overview
+
+This directory contains configurations and input files for experiments conducted to compare various computational methods in electronic structure calculations. The experiments include **DMRG**, **FCIQMC**, **mCDFCI**, **sCDFCI**, and **SHCI** methods applied to the systems **C2** and **N2** with the cc-pVDZ basis set.
+
+## FCIDUMP
+The FCIDUMP files for C2, N2 with cc-pVDZ basis sets were generated using Psi4 (version 1.8) with the `input.dat` script in the directory. Please be careful that some methods only accept `FCIDUMP` file without orbital energies.
+
+## Directory Structure
+- **dmrg/**: Contains configuration files for DMRG calculations.
+  - `c2/`: Files for the C₂ molecule.
+  - `n2/`: Files for the N₂ molecule.
+  - Each file specifies the bond dimension used (`dmrg-<dimension>.conf`).
+
+- **fciqmc/**: Input files for FCIQMC calculations using NECI.
+  - `c2/`: Files for the C₂ molecule.
+  - `n2/`: Files for the N₂ molecule.
+  - Each file specifies the walker number (`neci-<walker_count>.inp`).
+
+- **mcdfci/**: JSON input files for mCDFCI calculations.
+  - `c2_ccpvdz.json`: Input for C₂ with cc-pVDZ basis.
+  - `n2_ccpvdz.json`: Input for N₂ with cc-pVDZ basis.
+
+- **scdfci/**: JSON input files for sCDFCI calculations.
+  - `c2_ccpvdz.json`: Input for C₂ with cc-pVDZ basis.
+  - `n2_ccpvdz.json`: Input for N₂ with cc-pVDZ basis.
+
+- **shci/**: Input files for SHCI calculations.
+  - `c2.json`: Input for C₂ molecule.
+  - `n2.json`: Input for N₂ molecule.
+
+For FCIQMC, additional blocking analysis is carried out by:
+```bash
+python3 ${NECI_ROOT}/utils/blocking.py -p 'plots/blocking.png' -f 20000 -d24 -d23 -o/ FCIMCStats > stats
+```
+
+Feel free to contact the authors or open an issue for questions or further clarifications.

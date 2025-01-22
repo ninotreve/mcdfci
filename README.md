@@ -59,3 +59,8 @@ The input of the executable is a JSON file. A sample input file (`example_h2o_st
     }
 }
 ```
+
+## Reproducing Experiment Results
+The methods to reproduce the experiments presented in the paper are detailed in the `experiments` directory. Each subdirectory corresponds to a specific test case, including example input files, configurations, and scripts.
+
+Feel free to open an issue for further questions or clarifications regarding the experiments.

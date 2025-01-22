@@ -1,0 +1,46 @@
+# run psi4
+# Equilibruim geometry
+# 2.118 a_0 * 0.52917721067 A/a_0 = 1.12079733 A
+molecule {
+         N 0 0 0
+         N 0 0 1.12079733
+}
+
+set {
+    basis cc-pVDZ
+}
+
+scf_e, scf_wfn = energy('SCF', return_wfn=True)
+fcidump(scf_wfn, fname='FCIDUMP-ccpvdz', oe_ints=['EIGENVALUES'])
+
+clean()
+
+# Equilibruim geometry
+# 2.118 a_0 * 0.52917721067 A/a_0 = 1.12079733 A
+molecule {
+         N 0 0 0
+         N 0 0 1.12079733
+}
+
+set {
+    basis cc-pVTZ
+}
+
+scf_e, scf_wfn = energy('SCF', return_wfn=True)
+fcidump(scf_wfn, fname='FCIDUMP-ccpvtz', oe_ints=['EIGENVALUES'])
+
+clean()
+
+# Equilibruim geometry
+# 2.118 a_0 * 0.52917721067 A/a_0 = 1.12079733 A
+molecule {
+         N 0 0 0
+         N 0 0 1.12079733
+}
+
+set {
+    basis cc-pVQZ
+}
+
+scf_e, scf_wfn = energy('SCF', return_wfn=True)
+fcidump(scf_wfn, fname='FCIDUMP-ccpvqz', oe_ints=['EIGENVALUES'])

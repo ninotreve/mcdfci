@@ -1,0 +1,21 @@
+{
+    "hamiltonian": {
+        "fcidump_path": "FCIDUMP",
+        "threshold": 0.0
+    },
+    "solver": {
+        "cdfci": {
+            "coordinate_pick": "gcd_grad",
+            "coordinate_update": "eig",
+            "estimate": 128,
+            "max_memory": 500,
+            "max_wavefunction_size": 6786048327,
+            "num_iterations": 100000000,
+            "num_of_coordinate": 128,
+            "ref_det_occ": [],
+            "report_interval": 500,
+            "z_threshold": 3.7e-05,
+            "z_threshold_search": false
+        }
+    }
+}

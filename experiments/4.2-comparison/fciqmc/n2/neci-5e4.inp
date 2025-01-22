@@ -1,0 +1,60 @@
+title
+
+    # read integrals from FCIDUMP
+    system read
+        electrons 14
+        noBrillouinTheorem
+        molproMimic
+        nonUniformRandExcits pchb DELOCALISED
+        spin-restrict 0
+        hphf  0
+    endsys
+
+    calc
+        # initialization
+        definedet     1-6  31-34  45-46 51-52
+
+        nmcyc 30000
+        # for reproducibility
+        seed   -7
+        time   1000
+
+        totalWalkers 50000
+        tau-values start user-defined 0.001
+        tau-search algorithm conventional maxwalkerbloom 1
+
+        # use the initiator method
+        truncinitiator
+        addtoinitiator 3
+
+        semi-stochastic 100
+        pops-core 1000
+        trial-wavefunction 100
+        pops-trial 100
+        #walkcontgrow
+        startSinglePart            100
+        diagShift        0.0000000000
+        shiftDamp        0.1000000000
+        stepsshift       10
+        memoryFacPart         10.000000000000000
+        memoryFacSpawn        10.00000000000000
+        avGrowthRate
+        allrealcoeff
+        realspawncutoff 1.
+
+        methods
+            method vertex fcimc
+        endmethods
+
+    endcalc
+
+    logging
+        hdf5-pops
+        highlypopwrite 1000
+    endlog
+
+    integral
+        freeze 0 0
+    endint
+
+end

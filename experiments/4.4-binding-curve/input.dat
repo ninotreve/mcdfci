@@ -1,0 +1,13 @@
+# Equilibruim geometry
+# 2.118 a_0 * 0.52917721067 A/a_0 = 1.12079733 A
+molecule {
+         N 0 0 0
+         N 0 0 1.12079733
+}
+
+set {
+    basis cc-pVQZ
+}
+
+scf_e, scf_wfn = energy('SCF', return_wfn=True)
+fcidump(scf_wfn, fname='FCIDUMP', oe_ints=['EIGENVALUES'])

@@ -1,0 +1,3 @@
+The FCIDUMP files for N2 with cc-pVDZ, cc-pVTZ, and cc-pVQZ basis sets were generated using Psi4 (version 1.8) with the `input.dat` script in the directory.
+
+When modifying the number of threads, adjust `estimate` and `num_of_coordinate` in the input file accordingly, and proportionally reduce the total number of iterations. Refer to `gen_thread.py` for an example.
